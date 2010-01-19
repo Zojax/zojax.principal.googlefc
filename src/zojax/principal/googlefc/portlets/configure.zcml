@@ -1,0 +1,13 @@
+<configure
+ xmlns="http://namespaces.zope.org/zope"
+ xmlns:browser="http://namespaces.zope.org/browser"
+ xmlns:zojax="http://namespaces.zope.org/zojax"
+ i18n_domain="zojax.principal.facebook">
+
+  <zojax:portlet
+     name="portlet.googlefc"
+     title="Google Friend Connect"
+     schema=".interfaces.IGoogleFCPortlet"
+     class=".portlet.GoogleFC" />
+
+</configure>

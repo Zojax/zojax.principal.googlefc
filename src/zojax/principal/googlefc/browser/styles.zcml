@@ -1,0 +1,13 @@
+<configure
+   xmlns="http://namespaces.zope.org/zope"
+   xmlns:browser="http://namespaces.zope.org/browser"
+   xmlns:zojax="http://namespaces.zope.org/zojax"
+   i18n_domain="zojax.principal.googlefc">
+ 
+  <zojax:resourceinclude
+     name="zojax-principal-googlefc.css"
+     library="googlefc-auth"
+     type="stylesheet"
+     file="styles.css" filetype="zrt" />
+
+</configure>

@@ -1,0 +1,100 @@
+<configure
+   xmlns="http://namespaces.zope.org/zope"
+   xmlns:zcml="http://namespaces.zope.org/zcml"
+   xmlns:zojax="http://namespaces.zope.org/zojax"
+   i18n_domain="zojax.principal.googlefc">
+
+   <zojax:product
+      name="zojax-principal-googlefc"
+      title="Google Friend Connect Authentication"
+      description="Google friend connect authentication module."
+      schema=".interfaces.IGoogleFCAuthenticationProduct"
+      class=".product.GoogleFCAuthenticationProduct"
+      configurable="true"/>
+  
+  <registerIn registry="zojax.product.zojax-principal-googlefc">
+
+     <!-- credentials -->
+     <class class=".credentials.CredentialsPlugin">
+       <require
+          permission="zojax.ManagePrincipals"
+          interface="zojax.content.type.interfaces.IItem"
+          set_schema="zojax.content.type.interfaces.IItem"/>
+     </class>
+    
+     <class class=".credentials.GoogleFCCredentials">
+       <allow interface=".interfaces.IGoogleFCCredentials" />
+     </class>
+   
+     <subscriber handler=".credentials.installCredentialsPlugin" />
+     <subscriber handler=".credentials.uninstallCredentialsPlugin" />
+   
+     <!-- authenticator plugin -->
+     <class class=".plugin.GoogleFCPrincipal">
+       <allow attributes="identifier" />
+     </class>
+   
+     <class class=".plugin.AuthenticatorPlugin">
+       <implements
+          interface="zope.app.container.interfaces.IContainerNamesContainer"/>
+       
+       <allow attributes="prefix"/>
+       
+       <require
+          permission="zojax.ManagePrincipals"
+          interface="zope.app.container.interfaces.IReadContainer" />
+     </class>
+   
+     <!--utility
+        name="principal.googlefc"
+        component=".plugin.authenticatorFactory"/-->
+   
+     <subscriber handler=".plugin.pluginRemovedHandler" />
+   
+     <subscriber handler=".foundsubscriber.foundPrincipalCreated" />
+     
+     <subscriber handler=".foundsubscriber.principalLoggingOut" />
+   
+     <subscriber
+        for="zope.app.authentication.interfaces.IAuthenticatedPrincipalCreated"
+        handler=".foundsubscriber.foundPrincipalCreated" />
+   
+     <adapter factory=".foundsubscriber.getInternalPrincipal" />
+   
+     <!-- searchable content -->
+     <class class=".plugin.GoogleFCPrincipal" 
+   	 zcml:condition="installed zojax.content.type">
+       <implements interface="zojax.content.type.interfaces.ISearchableContent"/>
+     </class>
+   
+     <!-- principal field -->
+     <class class=".plugin.GoogleFCPrincipal"
+   	 zcml:condition="installed zojax.principal.field">
+       <implements interface="zojax.principal.field.interfaces.IUser"/>
+   
+       <require
+          permission="zope.View"
+          interface="zojax.principal.field.interfaces.IUser"/>
+     </class>   
+     
+    <utility
+        name="credentials.googlefc"
+        component=".credentials.credentialsFactory"/>
+     
+    <utility
+     name="principal.googlefc"
+     component=".plugin.authenticatorFactory"/>
+   
+    <!-- browser views -->
+    <include package=".browser" />
+    
+    <!-- portlets -->
+    <include package=".portlets" />
+  
+  
+  </registerIn>
+  
+  <!-- styles -->
+  <include package=".browser" file="styles.zcml" />
+
+</configure>

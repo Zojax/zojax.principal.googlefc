@@ -1,0 +1,15 @@
+<div class="z-form" i18n:domain="zojax.principal.users">
+  <h1 i18n:translate="">Remove user</h1>
+  <br />
+
+  <form action="index.html" method="post">
+    <tal:i18n i18n:translate="">
+      Are you sure you want remove this user?
+    </tal:i18n>
+
+    <div class="z-form-controls">
+      <input class="z-form-removebutton" type="submit"
+	     name="form.remove" value="Remove" i18n:attributes="value" />
+    </div>
+  </form>
+</div>

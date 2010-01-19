@@ -1,0 +1,35 @@
+<tal:block define="dummy resourcepackage:googlefc-auth">
+  <div id="googlefc-auth">
+  </div>
+  
+  <script src="http://www.google.com/jsapi"></script>
+  
+  <script type="text/javascript">
+    google.load('friendconnect', '0.8');
+  </script>
+  
+  <script type="text/javascript" tal:content="string: var siteId = '${view/siteId}'; var successUrl = '${view/successUrl}'">
+  </script>
+  
+  <script type="text/javascript">
+  google.friendconnect.container.initOpenSocialApi({
+      site: siteId,
+      onload: function() {
+        if (!window.timesloaded) {
+          window.timesloaded = 1;
+        } else {
+          window.timesloaded++;
+        }
+        if (window.timesloaded > 1) {
+          window.top.location.href = successUrl;
+        }
+      }
+    });
+ </script>
+ 
+ <script type="text/javascript">
+    google.friendconnect.renderSignInButton({ 'id': 'googlefc-auth', 'text' : 'Click here to join ', 'style': 'standard' });
+ 
+ </script>
+ 
+</tal:block>
