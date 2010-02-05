@@ -1,6 +1,0 @@
-<div class="z-portlet portlet-googlefc" i18n:domain="zojax.principal.googlefc">
-    <div class="z-portlet-item">
-      <script type="text/javascript" tal:content="view/fbInitScript">
-      </script>
-    </div>
-</div>
