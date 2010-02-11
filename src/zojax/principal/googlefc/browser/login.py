@@ -19,7 +19,8 @@ from zope.component import getUtility
 from zope.traversing.browser import absoluteURL
 from zope.app.component.hooks import getSite
 
-from zojax.principal.googlefc.interfaces import IGoogleFCAuthenticationProduct
+from zojax.principal.googlefc.interfaces import IGoogleFCAuthenticationProduct,
+                                                IGoogleFCUsersPlugin
 
 class LoginAction(object):
 
@@ -32,3 +33,7 @@ class LoginAction(object):
 
     def isProcessed(self):
         return False
+    
+    def render(self):
+        if queryUtility(IGoogleFCUsersPlugin) is not None:
+            return super(LoginAction, self).render()
