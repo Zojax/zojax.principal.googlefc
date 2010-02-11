@@ -15,7 +15,7 @@
 
 $Id$
 """
-from zope.component import getUtility
+from zope.component import getUtility, queryUtility
 from zope.traversing.browser import absoluteURL
 from zope.app.component.hooks import getSite
 
