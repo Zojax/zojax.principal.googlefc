@@ -19,7 +19,7 @@ from zope.component import getUtility, queryUtility
 from zope.traversing.browser import absoluteURL
 from zope.app.component.hooks import getSite
 
-from zojax.principal.googlefc.interfaces import IGoogleFCAuthenticationProduct,
+from zojax.principal.googlefc.interfaces import IGoogleFCAuthenticationProduct, \
                                                 IGoogleFCUsersPlugin
 
 class LoginAction(object):
