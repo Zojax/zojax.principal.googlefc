@@ -37,3 +37,4 @@ class LoginAction(object):
     def render(self):
         if queryUtility(IGoogleFCUsersPlugin) is not None:
             return super(LoginAction, self).render()
+        return u''
