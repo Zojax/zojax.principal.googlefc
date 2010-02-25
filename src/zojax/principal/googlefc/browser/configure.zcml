@@ -29,5 +29,11 @@
      template="login.pt"
      class=".login.LoginAction"
      permission="zope.Public" />
+     
+  <browser:page
+     for="*"
+     name="googleFCSignIn"
+     permission="zope.Public"
+     class=".signin.GoogleFCSignIn"/>
 
 </configure>

@@ -28,7 +28,7 @@ class LoginAction(object):
 
     def update(self):
         self.siteId = getUtility(IGoogleFCAuthenticationProduct).siteId
-        self.successUrl = '%s/login-success.html'%absoluteURL(getSite(), self.request)
+        self.successUrl = '%s/googleFCSignIn'%absoluteURL(getSite(), self.request)
 
     def isProcessed(self):
         return False
