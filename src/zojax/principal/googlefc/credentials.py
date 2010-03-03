@@ -72,12 +72,12 @@ def installCredentialsPlugin(plugin, ev):
     event.notify(ObjectCreatedEvent(plugin))
 
     auth = removeSecurityProxy(auth)
-    if 'credendials.googlefc' in auth:
-        del auth['credendials.googlefc']
+    if 'credentials.googlefc' in auth:
+        del auth['credentials.googlefc']
 
-    auth['credendials.googlefc'] = plugin
+    auth['credentials.googlefc'] = plugin
     auth.credentialsPlugins = tuple(auth.credentialsPlugins) + \
-        ('credendials.googlefc',)
+        ('credentials.googlefc',)
 
 
 @component.adapter(IGoogleFCUsersPlugin, IObjectRemovedEvent)
@@ -85,9 +85,9 @@ def uninstallCredentialsPlugin(plugin, ev):
     auth = getUtility(IAuthentication)
 
     plugins = list(auth.credentialsPlugins)
-    if 'credendials.googlefc' in plugins:
-        plugins.remove('credendials.googlefc')
+    if 'credentials.googlefc' in plugins:
+        plugins.remove('credentials.googlefc')
         auth.credentialsPlugins = tuple(plugins)
 
-    if 'credendials.googlefc' in auth:
-        del auth['credendials.googlefc']
+    if 'credentials.googlefc' in auth:
+        del auth['credentials.googlefc']
