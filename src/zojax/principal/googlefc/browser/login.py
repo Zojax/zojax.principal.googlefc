@@ -21,6 +21,7 @@ from zope.app.component.hooks import getSite
 
 from zojax.principal.googlefc.interfaces import IGoogleFCAuthenticationProduct
 
+
 class LoginAction(object):
 
     id = u'googlefc.login'

@@ -31,7 +31,7 @@
      permission="zope.Public" />
      
   <browser:page
-     for="*"
+     for="zope.app.component.interfaces.ISite"
      name="googleFCSignIn"
      permission="zope.Public"
      class=".signin.GoogleFCSignIn"/>

@@ -62,8 +62,10 @@ class IGoogleFCPrincipal(interface.Interface):
 
 class IGoogleFCPrincipalInfo(IPrincipalInfo):
     """ principal info """
+    
+    identifier = interface.Attribute('Identifier')
 
-    internalId = interface.Attribute('OpenID Identifier')
+    internalId = interface.Attribute('Internal Identifier')
 
 
 class IGoogleFCPrincipalMarker(interface.Interface):
