@@ -29,11 +29,6 @@
      <subscriber handler=".credentials.installCredentialsPlugin" />
      <subscriber handler=".credentials.uninstallCredentialsPlugin" />
    
-     <!-- authenticator plugin -->
-     <class class=".plugin.GoogleFCPrincipal">
-       <allow attributes="identifier" />
-     </class>
-   
      <class class=".plugin.AuthenticatorPlugin">
        <implements
           interface="zope.app.container.interfaces.IContainerNamesContainer"/>
@@ -74,7 +69,11 @@
    
        <require
           permission="zope.View"
-          interface="zojax.principal.field.interfaces.IUser"/>
+          interface=".interfaces.IGoogleFCPrincipal"/>
+          
+        <require
+       permission="zojax.ModifyContent"
+       set_schema=".interfaces.IGoogleFCPrincipal"/>
      </class>   
      
     <utility
@@ -96,5 +95,7 @@
   
   <!-- styles -->
   <include package=".browser" file="styles.zcml" />
+  
+  <include package=".browser" file="preference.zcml" />
 
 </configure>

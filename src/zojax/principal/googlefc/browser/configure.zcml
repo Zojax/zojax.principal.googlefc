@@ -4,24 +4,6 @@
    xmlns:zojax="http://namespaces.zope.org/zojax"
    i18n_domain="zojax.principal.googlefc">
  
-  <!-- remove principal -->
-  <zojax:preferenceGroup
-     id="membership.removegooglefc"
-     title="Remove user"
-     for="zojax.principal.googlefc.interfaces.IGoogleFCPrincipalMarker"
-     description="Remove user from portal."
-     schema=".remove.IPrincipalRemoverPreference"
-     tests=".remove.isNotSelf"
-     permission="zojax.ManagePrincipals" />
-
-  <zojax:pagelet
-     name="index.html"
-     for=".remove.IPrincipalRemoverPreference"
-     class=".remove.RemovePrincipalView"
-     template="remove.pt"
-     provides="zojax.preferences.browser.interfaces.IEdit"
-     permission="zojax.ManagePrincipals" />
-
   <!-- login action -->
   <zojax:pagelet
      type="login.action"

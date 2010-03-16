@@ -58,6 +58,8 @@ class IGoogleFCPrincipal(interface.Interface):
         required = True)
 
     identifier = interface.Attribute('OpenID Identifier')
+    
+    id = interface.Attribute('Id')
 
 
 class IGoogleFCPrincipalInfo(IPrincipalInfo):
