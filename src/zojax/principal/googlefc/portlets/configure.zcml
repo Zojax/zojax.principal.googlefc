@@ -2,7 +2,7 @@
  xmlns="http://namespaces.zope.org/zope"
  xmlns:browser="http://namespaces.zope.org/browser"
  xmlns:zojax="http://namespaces.zope.org/zojax"
- i18n_domain="zojax.principal.facebook">
+ i18n_domain="zojax.principal.googlefc">
 
   <zojax:portlet
      name="portlet.googlefc"
