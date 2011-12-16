@@ -1,0 +1,94 @@
+##############################################################################
+#
+# Copyright (c) 2003-2004 Zope Corporation and Contributors.
+# All Rights Reserved.
+#
+# This software is subject to the provisions of the Zope Public License,
+# Version 2.1 (ZPL).  A copy of the ZPL should accompany this distribution.
+# THIS SOFTWARE IS PROVIDED "AS IS" AND ANY AND ALL EXPRESS OR IMPLIED
+# WARRANTIES ARE DISCLAIMED, INCLUDING, BUT NOT LIMITED TO, THE IMPLIED
+# WARRANTIES OF TITLE, MERCHANTABILITY, AGAINST INFRINGEMENT, AND FITNESS
+# FOR A PARTICULAR PURPOSE.
+#
+##############################################################################
+msgid ""
+msgstr ""
+"Project-Id-Version: Development/Unknown\n"
+"POT-Creation-Date: Thu Dec  8 22:13:54 2011\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: Zope 3 Developers <zope3-dev@zope.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Generated-By: zope/app/locales/extract.py\n"
+
+#: src/zojax/principal/googlefc/browser/remove.pt:11
+msgid "Remove"
+msgstr ""
+
+#: src/zojax/principal/googlefc/browser/remove.pt:2
+msgid "Remove user"
+msgstr ""
+
+#: src/zojax/principal/googlefc/browser/remove.pt:6
+msgid "Are you sure you want remove this user?"
+msgstr ""
+
+#: src/zojax/principal/googlefc/browser/remove.py:51
+msgid "User has been removed."
+msgstr ""
+
+#: src/zojax/principal/googlefc/browser/signin.py:43
+msgid "Login failed."
+msgstr ""
+
+#: src/zojax/principal/googlefc/credentials.py:63
+msgid "Google Friend Connect credentials plugin"
+msgstr ""
+
+#: src/zojax/principal/googlefc/interfaces.py:29
+msgid "Site id"
+msgstr ""
+
+#: src/zojax/principal/googlefc/interfaces.py:32
+msgid "Consumer key"
+msgstr ""
+
+#: src/zojax/principal/googlefc/interfaces.py:35
+msgid "Consumer secret"
+msgstr ""
+
+#: src/zojax/principal/googlefc/interfaces.py:38
+msgid "Parent Url"
+msgstr ""
+
+#: src/zojax/principal/googlefc/interfaces.py:42
+msgid "Base domain"
+msgstr ""
+
+#: src/zojax/principal/googlefc/interfaces.py:46
+msgid "RPC url"
+msgstr ""
+
+#: src/zojax/principal/googlefc/interfaces.py:57
+#: src/zojax/principal/googlefc/interfaces.py:94
+msgid "Title"
+msgstr ""
+
+#: src/zojax/principal/googlefc/interfaces.py:98
+msgid "Prefix"
+msgstr ""
+
+#: src/zojax/principal/googlefc/interfaces.py:99
+msgid "Prefix to be added to all principal ids to assure that all ids are unique within the authentication service"
+msgstr ""
+
+#: src/zojax/principal/googlefc/plugin.py:252
+msgid "Google Friend Connect plugin"
+msgstr ""
+
+#: src/zojax/principal/googlefc/plugin.py:253
+msgid "This plugin allow use googlefc login like google, yahoo, lifejournal and many others"
+msgstr ""
+

@@ -2,7 +2,10 @@
    xmlns="http://namespaces.zope.org/zope"
    xmlns:zcml="http://namespaces.zope.org/zcml"
    xmlns:zojax="http://namespaces.zope.org/zojax"
+   xmlns:i18n="http://namespaces.zope.org/i18n"
    i18n_domain="zojax.principal.googlefc">
+
+  <i18n:registerTranslations directory="locales" />
 
    <zojax:product
       name="zojax-principal-googlefc"
